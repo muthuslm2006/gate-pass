@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-
+import { Router, RouterOutlet } from '@angular/router';
+declare var $: any;
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,4 +11,18 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'gate-pass';
+  // userData;
+
+  visible = false;
+
+
+
+  constructor(private router: Router
+  ) {
+
+  } // endof constructor();
+
 }
+
+
+// end OF LOGOUT SECTION

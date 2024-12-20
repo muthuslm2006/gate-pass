@@ -1,0 +1,18 @@
+.card {
+  margin-top: 18px;
+  padding: 20px;
+  width: 550px;
+  border-radius: 10px;
+  position: absolute;
+  top: 10%;
+  box-shadow: 0px 0px 0px 0px blueviolet;
+  left: 2%;
+  background-image: linear-gradient(rgba(179, 4, 135, 0.288), rgba(51, 32, 40, 0.815));
+}
+
+.content-body {
+  padding: 930px 2rem;
+  background-image: linear-gradient(rgba(240, 238, 239, 0.288), rgba(204, 157, 176, 0.815));
+  display: block;
+  left: 2%;
+}

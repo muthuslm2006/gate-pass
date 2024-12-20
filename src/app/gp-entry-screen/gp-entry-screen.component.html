@@ -1,0 +1,62 @@
+<div class="content-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="text-center">
+            <h1>Gate Pass Entry</h1>
+          </div>
+          <form class="row g-3" id="gateEntryForm" [formGroup]="gateEntryForm">
+            <div class="col-md-6">
+              <label for="inputName" class="form-label">Name</label>
+              <input type="text" class="form-control" formControlName="name" id="inputName">
+              <span *ngIf="!gateEntryForm.get('name')?.valid" class="text-danger">Name is required</span>
+
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" formControlName="email" id="inputEmail4">
+              <span *ngIf="!gateEntryForm.get('email')?.valid" class="text-danger">Email is required</span>
+
+            </div>
+
+            <div class="col-md-4">
+              <label for="dob" class="form-label">DOB</label>
+              <input id="dob" class="form-control" formControlName="dob" type="date" />
+              <span *ngIf="!gateEntryForm.get('dob')?.valid" class="text-warning">DOB is required</span>
+
+            </div>
+            <div class="col-md-4">
+              <label for="inputPhone" class="form-label">Phone Number</label>
+              <input id="phoneNumer" class="form-control" type="number" formControlName="phoneNumber" />
+              <span *ngIf="!gateEntryForm.get('phoneNumber')?.valid" class="text-danger">Phone No is required</span>
+
+            </div>
+            <div class="col-md-4">
+              <label for="input" class="form-label">Entry Time</label>
+              <input type="datetime-local" class="form-control" id="inputZip" formControlName="entryDate">
+              <span *ngIf="!gateEntryForm.get('entryDate')?.valid" class="text-danger">Entry-Time is required</span>
+
+            </div>
+            <div class="col-6">
+              <label for="formFile" class="form-label">Upload Image</label>
+              <input #imageInput class="form-control" type="file" id="formFile"
+                (change)="profileProcessFile(imageInput, $event)">
+            </div>
+            <div class="col-6">
+              <label for="formFile" class="form-label">Upload Signature</label>
+              <signature-pad #signature *ngIf="isBrowser" [options]="signaturePadOptions"
+                (drawStart)="drawStart($event)" (drawEnd)="drawComplete($event)"></signature-pad>
+              <!-- <input #imageInput class="form-control" type="file" id="formSign "
+                (change)="signatureProcessFile(imageInput, $event)"> -->
+            </div>
+
+            <div class="col-12">
+              <button [disabled]="" type="submit" class="btn btn-primary" (click)="addGatePassEntry()">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
